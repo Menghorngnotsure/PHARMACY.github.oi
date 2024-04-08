@@ -44,6 +44,10 @@
   <h1>Welcome to Our Medicine Information Site</h1>
   <p>Find information about various medicines, their uses, and prices.</p>
   <a href="https://www.facebook.com/profile.php?id=61558108439165&mibextid=ZbWKwL" target="_blank">Facebook Page link!</a><br>
+  <video width="300" height="300" controls>
+    <source src="video/video of medicine.mp4" type="video/mp4">
+  </video>
+  
   <img src="images/pharmacy 1.jpg" width="400">
   <img src="images/pharmacy 4.jpg" width="400">
   
@@ -53,14 +57,42 @@
   <h1>Medicine Gallery</h1>
   <div class="gallery">
     <!-- Add your images here -->
-    <img src="images/madicine 1.jpg" alt="Medicine 1" data-price="10">
-    <img src="images/medicine 2.jpg" alt="Medicine 2">
-    <img src="images/medicine 3.jpg" alt="Medicine 3">
-    <img src="images/medicine 4.jpg" alt="Medicine 4">
-    <img src="images/photo_5_2024-04-07_09-26-38.jpg" alt="Medicine 5">
-    <img src="images/medicine 6.jpg" alt="Medicine 6">
-    <img src="images/medicine 8.jpg" alt="Medicine 8">
-    
+    <div class="product slide-in">
+      <img src="images/madicine 1.jpg" alt="Medicine 1">
+      <h2>Product 1</h2>
+      <p>Description of product 3.</p>
+      <button>Add to Cart</button>
+      </div>
+      <div class="product slide-in">
+        <img src="images/medicine 2.jpg" alt="Medicine 2">
+        <h2>Product 2</h2>
+        <p>Description of product 3.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product slide-in">
+        <img src="images/medicine 3.jpg" alt="Medicine 3">
+        <h2>Product 3</h2>
+        <p>Description of product 3.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product slide-in">
+        <img src="images/medicine 4.jpg" alt="Medicine 4">
+        <h2>Product 4</h2>
+        <p>Description of product 4.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product slide-in">
+        <img src="images/medicine 6.jpg" alt="Medicine 5">
+        <h2>Product 5</h2>
+        <p>Description of product 5.</p>
+        <button>Add to Cart</button>
+        </div>
+        <div class="product slide-in">
+          <img src="images/medicine 8.jpg" alt="Medicine 6">
+          <h2>Product 6</h2>
+          <p>Description of product 6.</p>
+          <button>Add to Cart</button>
+          </div>
   </div>
 </div>
 
@@ -102,25 +134,28 @@
   </table>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-  // Function to filter gallery items
-  function filterGalleryByPrice(minPrice, maxPrice) {
-    const galleryItems = document.querySelectorAll('.gallery img');
-    galleryItems.forEach(item => {
-      const price = parseInt(item.getAttribute('data-price'), 10);
-      if (price >= minPrice && price <= maxPrice) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-  // Event listener for price range selection
-  document.getElementById('price-range').addEventListener('change', (event) => {
-    const [minPrice, maxPrice] = event.target.value.split('-').map(price => parseInt(price, 10));
-    filterGalleryByPrice(minPrice, maxPrice);
+// Function to show a message
+function showMessage() {
+  alert('Welcome to our Medicine Shop!');
+}
+
+// Function to animate elements
+function animateElement(element, animationName) {
+  element.classList.add('animated', animationName);
+  element.addEventListener('animationend', function() {
+    element.classList.remove('animated', animationName);
   });
+}
+
+// Add event listener to the window object to trigger animations on load
+window.addEventListener('load', function() {
+  const logo = document.querySelector('.logo');
+  animateElement(logo, 'bounce');
 });
+  
+// Add event listener to a button
+const button = document.querySelector('.my-button');
+button.addEventListener('click', showMessage);
  // Add your JavaScript here for more interactivity
 </script>
 <pre>
